@@ -32,8 +32,9 @@ class BankAccount:
 account101 = BankAccount(101, 0.01, 100)
 account102 = BankAccount(102, 0.01, 200)
 
-print(BankAccount.display_account_info(account101))
-print(BankAccount.display_account_info(account102))
+print(account101.display_account_info())
+# print(BankAccount.display_account_info(account101))
+# print(BankAccount.display_account_info(account102))
 
 account101.deposit(100).deposit(50).deposit(50)
 print(BankAccount.display_account_info(account101))
