@@ -12,12 +12,11 @@ class PersonCard extends Component {
                 <h2>{this.props.firstName}, {this.props.lastName}</h2>
                 <p>Age: {this.state.ageUpdate}</p>
                 <p>Hair Color: {this.props.hairColor}</p>
-                <button onClick={()=> this.setState ({ageUpdate: this.state.ageUpdate+1})}>Birthday Button for {this.props.lastName} {this.props.firstName}  </button>
+                <button onClick={()=> this.setState ({ageUpdate: this.state.ageUpdate+1})}
+                >Birthday Button for {this.props.lastName} {this.props.firstName}  </button>
             </div>
         );
     }
 }
-
-const doe = new PersonCard("Doy")
 
 export default PersonCard
