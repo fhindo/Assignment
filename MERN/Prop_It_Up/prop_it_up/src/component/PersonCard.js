@@ -1,8 +1,8 @@
 import React from "react";
 import { Component } from "react";
 
-class PersonCard extends Component{
-    render(){
+class PersonCard extends Component {
+    render() {
         return (
             <div>
                 <h2>{this.props.firstName}, {this.props.lastName}</h2>
@@ -13,6 +13,6 @@ class PersonCard extends Component{
     }
 }
 
-const doe = new PersonCard ("Doy")
+const doe = new PersonCard("Doy")
 
 export default PersonCard
