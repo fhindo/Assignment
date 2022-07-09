@@ -13,6 +13,5 @@ class PersonCard extends Component {
     }
 }
 
-const doe = new PersonCard("Doy")
 
 export default PersonCard
