@@ -43,7 +43,7 @@ const UserForm = props => {
                     <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstname} />
                     <br></br>
                     {
-                        firstname.length < 2 ? "First Name must be at least 2 characters" : null
+                        firstname.length  < 2 && firstname.length > 0 ? "First Name must be at least 2 characters" : null
                     }
                     <br></br>
                 </div>
@@ -52,7 +52,7 @@ const UserForm = props => {
                     <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastname} />
                     <br></br>
                     {
-                        lastname.length < 2 ? "last Name must be at least 2 characters" : null
+                        lastname.length < 2 && lastname.length > 0 ? "last Name must be at least 2 characters" : null
                     }
                     <br></br>
                 </div>
@@ -61,7 +61,7 @@ const UserForm = props => {
                     <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
                     <br></br>
                     {
-                        email.length < 5 ? "email must be at least 5 characters" : null
+                        email.length < 5 && email.length > 0? "email must be at least 5 characters" : null
                     }
                     <br></br>
                 </div>
@@ -70,7 +70,7 @@ const UserForm = props => {
                     <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} autoComplete="off" />
                     <br></br>
                     {
-                        password.length < 8 ? "Password must be at least 8 characters " : null
+                        password.length < 8 && password.length>0 ? "Password must be at least 8 characters " : null
                     }
                     <br></br>
                 </div>
