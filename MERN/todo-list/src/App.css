@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.main-div{
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+}
+.par{
+  display: inline-block;
+}
