@@ -9,7 +9,7 @@ const PokemonApi = () => {
         console.log("submit test");
 
         // feting the data from the API
-        fetch("https://pokeapi.co/api/v2/pokemon")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
             .then((response) => {
                 return response.json();
             })
