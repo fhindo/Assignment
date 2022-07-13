@@ -13,16 +13,25 @@ const ToDoFrom = () => {
         let newList = { addAList, checkedItem };
         console.log(newList);
         setAllLists([...allLists, newList]);
-        console.log(allLists);
+        //to check state variables you should always use the react dev tool
+        // console.log(allLists);
     }
 
     //delete an item form the list
     const deleteItem = (e, index) => {
         console.log("delete an item", e, index)
-        let fiterAndRemove = allLists.filter((oneItem, idx) => {
-            return idx != index;
-        })
-        setAllLists(fiterAndRemove);
+        //let fiterAndRemove = allLists.filter((oneItem, idx) => {
+           //return idx != index;
+        //})
+        //using DOM to get the info from the check box and .checked to check if it's true or faluse
+        let elem = document.querySelector(`#check-${index}`)
+        if(elem.checked == true){
+            let copy = [...allLists]
+            copy.splice(index,1);
+            setAllLists(copy);
+        } else {
+            alert("please check the item first");
+        }
     }
 
     //change the style to add a line throght the p tage 
@@ -58,11 +67,10 @@ const ToDoFrom = () => {
                                 <p className="par" style={{ textDecorationLine: oneList.checkedItem ? 'line-through' : "" }}>
                                     {oneList.addAList}
                                 </p>
-
                                 {/* check if the item check box is true or false and display it accordingly */}
                                 {oneList.checkedItem ?
-                                    <input type="checkbox" onChange={(e) => checkOnOff(e, index)} checked /> :
-                                    <input type="checkbox" onChange={(e) => checkOnOff(e, index)} />}
+                                    <input id={`check-${index}`} type="checkbox" onChange={(e) => checkOnOff(e, index)} checked /> :
+                                    <input id={`check-${index}`} type="checkbox" onChange={(e) => checkOnOff(e, index)} />}
                                 
                                 {/* delete item */}
                                 <button onClick={(e) => deleteItem(e, index)}>Del</button>
