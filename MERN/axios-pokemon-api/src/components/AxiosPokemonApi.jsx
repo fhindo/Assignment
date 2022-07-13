@@ -5,11 +5,11 @@ const AxiosPokemonApi = () => {
 
     let [pokemon, setPokemon] = useState([])
 
-    //using a this fucntion to activite the fetch
+    //using this fucntion to activite the Axios get data from a button
     const handleSubmit = () => {
         console.log("submit test");
 
-        // feting the data from the API
+        // axios get the data from the API
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=807")
             .then((response) => {
                 console.log("This is our API fetch results ", response);
