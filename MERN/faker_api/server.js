@@ -20,12 +20,13 @@ class Company {
     constructor() {
         this._id = faker.database.mongodbObjectId();
         this.name = faker.company.companyName();
-        // this.address 
-        this.street = faker.address.streetAddress();
-        this.city = faker.address.cityName();
-        this.state = faker.address.stateAbbr();
-        this.zipCode = faker.address.zipCode();
-        this.country = faker.address.county()
+        this.address = [
+            this.street = faker.address.streetAddress(),
+            this.city = faker.address.cityName(),
+            this.state = faker.address.stateAbbr(),
+            this.zipCode = faker.address.zipCode(),
+            this.country = faker.address.county(),
+        ] 
     }
 }
 
