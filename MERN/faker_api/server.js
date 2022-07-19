@@ -20,13 +20,13 @@ class Company {
     constructor() {
         this._id = faker.database.mongodbObjectId();
         this.name = faker.company.companyName();
-        this.address = [
-            this.street = faker.address.streetAddress(),
-            this.city = faker.address.cityName(),
-            this.state = faker.address.stateAbbr(),
-            this.zipCode = faker.address.zipCode(),
-            this.country = faker.address.county(),
-        ] 
+        this.address = {
+            street: faker.address.streetAddress(),
+            city: faker.address.cityName(),
+            state: faker.address.stateAbbr(),
+            zipCode: faker.address.zipCode(),
+            country: faker.address.county(),
+        }
     }
 }
 
@@ -67,15 +67,15 @@ app.get("/api/users/new", (req, res) => {
 
 app.get("/api/companies/new", (req, res) => {
     res.json({
-        const : company.length,
-        results : company
+        const: company.length,
+        results: company
     })
 })
 
-app.get("/api/user/compnay/:id", (req, res)=>{
+app.get("/api/user/compnay/:id", (req, res) => {
     res.json({
         compnayInfo: company[req.params.id],
-        userInfor : users[req.params.id]
+        userInfor: users[req.params.id]
     })
 })
 
