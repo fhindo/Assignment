@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb+srv://root:root@clustermern.loxnb.mongodb.net/joke_db?retryWrites=true&w=majority', {
+mongoose.connect('', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
