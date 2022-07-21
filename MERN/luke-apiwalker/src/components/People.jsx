@@ -6,6 +6,7 @@ const People = () => {
     const [peopleInfo, setPeopleInfo] = useState([]);
     const { drop, id } = useParams();
     const [isLoading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         getAllNodes();
