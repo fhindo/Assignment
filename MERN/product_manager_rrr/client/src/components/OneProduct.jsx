@@ -2,8 +2,10 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router'
 import { Link, useNavigate } from 'react-router-dom';
+import DeleteButton from './DeleteButton';
 
-const OneProduct = () => {
+
+const OneProduct = (props) => {
     const [oneProduc, setOneProduc] = useState({});
     const { id } = useParams();
     const navigate = useNavigate();
@@ -17,13 +19,17 @@ const OneProduct = () => {
             .catch(err => console.log(err))
     }, [])
 
-    const deleteOneItem = (e) => {
-        axios.delete(`http://localhost:8000/api/products/${id}`)
-            .then(response => {
-                console.log("api delete", response)
-                navigate("/")
-            })
-            .catch(err => console.log(err))
+    // const deleteOneItem = (e) => {
+    //     axios.delete(`http://localhost:8000/api/products/${id}`)
+    //         .then(response => {
+    //             console.log("api delete", response)
+    //             navigate("/")
+    //         })
+    //         .catch(err => console.log(err))
+    // }
+    const removeFromDom = personId => {
+        // setOneProduc(oneProduc.filter(oneProduc => oneProduc._id != personId))
+        navigate("/");
     }
 
     return (
@@ -37,7 +43,9 @@ const OneProduct = () => {
 
                 <Link to={`/edit/${id}`}>Edit {oneProduc.title}</Link>
                 <br></br>
-                <button onClick={() => deleteOneItem(oneProduc._id)}>Delete {oneProduc.title}</button>
+                
+                
+                <DeleteButton personId={oneProduc._id} successCallback={()=>removeFromDom(oneProduc._id)}/>
             </>
         </div>
     );
