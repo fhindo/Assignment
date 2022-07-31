@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\W1\\D1\\Fundamentals_I\\Fundamentals_I.csproj": {}
+    "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\Fundamentals_I\\Fundamentals_I.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\W1\\D1\\Fundamentals_I\\Fundamentals_I.csproj": {
+    "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\Fundamentals_I\\Fundamentals_I.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\W1\\D1\\Fundamentals_I\\Fundamentals_I.csproj",
+        "projectUniqueName": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\Fundamentals_I\\Fundamentals_I.csproj",
         "projectName": "Fundamentals_I",
-        "projectPath": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\W1\\D1\\Fundamentals_I\\Fundamentals_I.csproj",
+        "projectPath": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\Fundamentals_I\\Fundamentals_I.csproj",
         "packagesPath": "C:\\Users\\fadym\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\W1\\D1\\Fundamentals_I\\obj\\",
+        "outputPath": "C:\\Users\\fadym\\Desktop\\CodingDojo\\CodingDojo\\Public_GitHub\\Csharp\\Fundamentals_I\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fadym\\AppData\\Roaming\\NuGet\\NuGet.Config"
