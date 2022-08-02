@@ -92,9 +92,23 @@ static int[] OddArray()
 {
     // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
     // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].
+    List<int> oddList = new List<int>();
+    int i = 0;
+
+    while (i < 256){
+        if (i%2 != 0){
+            oddList.Add(i);
+            i++;
+        }
+    }
+    return oddList.ToArray();
 }
 
 
+foreach (var item in OddArray())
+{
+    Console.WriteLine(item);
+} 
 
 
 // static int GreaterThanY(int[] numbers, int y)
@@ -175,25 +189,25 @@ static int[] OddArray()
 
 // ShiftValues(new int[] { 1, 5, 10, 7, -2 });
 
-static object[] NumToString(int[] numbers)
-{
-    // Write a function that takes an integer array and returns an object array 
-    // that replaces any negative number with the string 'Dojo'.
-    // For example, if array "numbers" is initially [-1, -3, 2] 
-    // your function should return an array with values ['Dojo', 'Dojo', 2].
-    object[] newObjArr = new object[numbers.Length];
-    for (int i = 0; i < numbers.Length; i++)
-    {
-        if (numbers[i] < 0)
-        {
-            newObjArr[i] = "Dojo";
-        }
-        else
-        {
-            newObjArr[i] = numbers[i];
-        }
-    }
-    return newObjArr;
-}
+// static object[] NumToString(int[] numbers)
+// {
+// Write a function that takes an integer array and returns an object array 
+// that replaces any negative number with the string 'Dojo'.
+// For example, if array "numbers" is initially [-1, -3, 2] 
+// your function should return an array with values ['Dojo', 'Dojo', 2].
+//     object[] newObjArr = new object[numbers.Length];
+//     for (int i = 0; i < numbers.Length; i++)
+//     {
+//         if (numbers[i] < 0)
+//         {
+//             newObjArr[i] = "Dojo";
+//         }
+//         else
+//         {
+//             newObjArr[i] = numbers[i];
+//         }
+//     }
+//     return newObjArr;
+// }
 
-Console.WriteLine(NumToString(new int[] { -1, -3, 2 }));
+// Console.WriteLine(NumToString(new int[] { -1, -3, 2 }));
