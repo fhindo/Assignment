@@ -88,27 +88,23 @@
 // GetAverage(new int[] {2,10,3});
 
 
-static int[] OddArray()
-{
-    // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
-    // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].
-    List<int> oddList = new List<int>();
-    int i = 0;
+// static int[] OddArray()
+// {
+//     // Write a function that creates, and then returns, an array that contains all the odd numbers between 1 to 255. 
+//     // When the program is done, this array should have the values of [1, 3, 5, 7, ... 255].
+//     List<int> oddList = new List<int>();
+//     int i = 0;
 
-    while (i < 256){
-        if (i%2 != 0){
-            oddList.Add(i);
-            i++;
-        }
-    }
-    return oddList.ToArray();
-}
+//     while (i < 256){
+//         if (i%2 != 0){
+//             oddList.Add(i);
+//             i++;
+//         }
+//     }
+//     int[] newArr = oddList.ToArray();
+//     return newArr;
+// }
 
-
-foreach (var item in OddArray())
-{
-    Console.WriteLine(item);
-} 
 
 
 // static int GreaterThanY(int[] numbers, int y)
