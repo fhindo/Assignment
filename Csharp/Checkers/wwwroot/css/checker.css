@@ -13,18 +13,18 @@
 }
 
 
-.boardRaw:nth-child(2n) .boardCell:nth-child(2n+1){
+.boardRow:nth-child(2n) .boardCell:nth-child(2n+1){
 background-color: #b32121;
 }
 
-.boardRaw:nth-child(2n) .boardCell:nth-child(2n){
+.boardRow:nth-child(2n) .boardCell:nth-child(2n){
 background-color: #d7b68b;
 }
 
-.boardRaw:nth-child(2n+1) .boardCell:nth-child(2n+1){
+.boardRow:nth-child(2n+1) .boardCell:nth-child(2n+1){
 background-color: #d7b68b;
 }
 
-.boardRaw:nth-child(2n+1) .boardCell:nth-child(2n){
+.boardRow:nth-child(2n+1) .boardCell:nth-child(2n){
 background-color: #b32121;
 }
