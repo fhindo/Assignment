@@ -1,0 +1,17 @@
+@page "/checker"
+
+<PageTitle>Checker</PageTitle>
+
+<h2>Checker Board</h2>
+
+<div class="board">
+@for (int i = 0; i < 8; i++)
+{
+    <div class="boardRaw">
+    @for (int j = 0; j < 8; j++)
+    {
+        <div class="boardCell"></div>
+    }
+    </div>
+}
+</div>
