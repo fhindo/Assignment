@@ -5,7 +5,6 @@ namespace Checkers.Pages;
         public int Column { get; set; }
         public CheckerDirection Direction { get; set; }
         public string Color { get; set; }
-
     
     }
         public enum CheckerDirection
