@@ -43,7 +43,32 @@
                 });
             }
         }
+    
     }
+    CheckerClass activeChecker = null;
+        List<int> rowsOptions = new List<int>();
+        List<int> coulmnsOptions = new List<int>();
+    void CheckCheckerPosition()
+    {
+        rowsOptions.Clear();
+        coulmnsOptions.Clear();
+        if (activeChecker != null)
+                {
+                rowsOptions.Add(activeChecker.Row + (1* (activeChecker.Direction == CheckerDirection.Down ? 1 : -1)));
+                coulmnsOptions.Add(activeChecker.Column -1);
+                coulmnsOptions.Add(activeChecker.Column +1);
+                }
+    }
+    void MoveChecker (int row, int column)
+    {
+        bool canMoveTo = rowsOptions.Contains(row) && coulmnsOptions.Contains(column);
+        if (!canMoveTo)
+        return;
+        activeChecker.Column = column;
+        activeChecker.Row = row;
+        activeChecker = null;
+    }
+
 }
 
 
@@ -51,21 +76,32 @@
 <div class="board">
     @for (int i = 0; i < 8; i++)
     {
+        int cellI = i;
         <div class="boardRow">
             @for (int j = 0; j < 8; j++)
             {
+                int cellJ = j;
+                @* Console.WriteLine("cell i , j" +cellI +" "+ cellJ); *@
                 var checker = blackCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
                 if (checker == null)
                 {
                     checker = whiteCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
                 }
-                <div class="boardCell">
+
+                bool canMoveTo = rowsOptions.Contains(i) && coulmnsOptions.Contains(j);
+                
+
+                <div @onclick="() => MoveChecker(cellI, cellJ)" class="boardCell @(canMoveTo ? "active" : "")">
                     @if (checker != null)
                     {
-                        <div class="checker @checker.Color"></div>
-                    }
+					<div @onclick="() => {activeChecker = checker; CheckCheckerPosition();}"
+                        class="checker @checker.Color @(checker == activeChecker ? "active" : "" )">
+					</div>
+				}
                 </div>
             }
         </div>
     }
 </div>
+
+@* @(checker == activeChecker ? "active" : " ") *@
