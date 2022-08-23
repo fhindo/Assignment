@@ -1,17 +1,71 @@
+@using Checkers.Data;
+
+
 @page "/checker"
 
 <PageTitle>Checker</PageTitle>
 
 <h2>Checker Board</h2>
+@* creating the checkers from the class Checker*@
 
-<div class="board">
-@for (int i = 0; i < 8; i++)
-{
-    <div class="boardRow">
-    @for (int j = 0; j < 8; j++)
+@code {
+    List<CheckerClass> blackCheckers = new List<CheckerClass>();
+    List<CheckerClass> whiteCheckers = new List<CheckerClass>();
+
+
+    protected override void OnInitialized()
     {
-        <div class="boardCell"></div>
+        @* black Checkers *@
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = (i + 1) % 2; j < 8; j += 2)
+            {
+                blackCheckers.Add(new CheckerClass
+                {
+                    Color = "black",
+                    Column = j,
+                    Row = i,
+                    Direction = CheckerDirection.Down
+                });
+            }
+        }
+        @* white Checkers *@
+        for (int i = 5; i < 8; i++)
+        {
+            for (int j = (i + 1) % 2; j < 8; j += 2)
+            {
+                whiteCheckers.Add(new CheckerClass
+                {
+                    Color = "white",
+                    Column = j,
+                    Row = i,
+                    Direction = CheckerDirection.Up
+                });
+            }
+        }
     }
-    </div>
 }
+
+
+@* building the board *@
+<div class="board">
+    @for (int i = 0; i < 8; i++)
+    {
+        <div class="boardRow">
+            @for (int j = 0; j < 8; j++)
+            {
+                var checker = blackCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
+                if (checker == null)
+                {
+                    checker = whiteCheckers.FirstOrDefault(n => n.Column == j && n.Row == i);
+                }
+                <div class="boardCell">
+                    @if (checker != null)
+                    {
+                        <div class="checker @checker.Color"></div>
+                    }
+                </div>
+            }
+        </div>
+    }
 </div>
