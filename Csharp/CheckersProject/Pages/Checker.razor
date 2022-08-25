@@ -160,18 +160,6 @@
         if (activeChecker != null)
         {
             
-            @* we will check if the checker is at the last row if true we will set the direction to both *@
-            @* chcek the checker color white and it at the last row -> number 0 *@
-            @* update the checker to a king *@
-            if (activeChecker.Row == 0 && activeChecker.Color == "white")
-            {
-                activeChecker.Direction = CheckerDirection.Both;
-            }
-
-            if (activeChecker.Row == 7 && activeChecker.Color == "black")
-            {
-                activeChecker.Direction = CheckerDirection.Both;
-            }
 
             @* remove cheker after jump *@
 
@@ -198,6 +186,19 @@
             @* set the chceker postion *@
             activeChecker.Column = column;
             activeChecker.Row = row;
+            
+            @* we will check if the checker is at the last row if true we will set the direction to both *@
+            @* chcek the checker color white and it at the last row -> number 0 *@
+            @* update the checker to a king *@
+            if (activeChecker.Row == 0 && activeChecker.Color == "white")
+            {
+                activeChecker.Direction = CheckerDirection.Both;
+            }
+
+            if (activeChecker.Row == 7 && activeChecker.Color == "black")
+            {
+                activeChecker.Direction = CheckerDirection.Both;
+            }
             
             activeChecker = null;
             @* switchs the turn *@
@@ -345,8 +346,6 @@
 
                     }
                 </div>
-
-
 
             }
         </div>
