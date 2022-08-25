@@ -1,4 +1,5 @@
 #pragma warning disable CS8618 
+using Microsoft.AspNetCore.Mvc;
 namespace CheckersProject.Pages;
 public class CheckerClass
 {
