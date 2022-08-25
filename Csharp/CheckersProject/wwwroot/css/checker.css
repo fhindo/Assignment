@@ -6,14 +6,10 @@
 .board{
     height: 644px;
     width: 644px;
-    border: 2px solid rgb(255, 0, 0);
+    border: 3px solid black(255, 0, 0);
 }
 
-/* .boardRow{
-    margin: 0%;
-} */
-
-.boardCell{
+.cell{
     height: 80px;
     width: 80px;
     border: 2px solid black;
@@ -25,23 +21,27 @@
     justify-content: center;
 }
 
-.boardCell.active {
-    border: 3px solid rgb(251, 255, 0);
+.test {
+    color: aquamarine;
 }
 
-.boardRow:nth-child(2n) .boardCell:nth-child(2n+1){
+.cell.active {
+    border: 4px solid rgb(251, 255, 0);
+}
+
+.Row:nth-child(2n) .cell:nth-child(2n+1){
 background-color: #b32121;
 }
 
-.boardRow:nth-child(2n) .boardCell:nth-child(2n){
+.Row:nth-child(2n) .cell:nth-child(2n){
 background-color: #d7b68b;
 }
 
-.boardRow:nth-child(2n+1) .boardCell:nth-child(2n+1){
+.Row:nth-child(2n+1) .cell:nth-child(2n+1){
 background-color: #d7b68b;
 }
 
-.boardRow:nth-child(2n+1) .boardCell:nth-child(2n){
+.Row:nth-child(2n+1) .cell:nth-child(2n){
 background-color: #b32121;
 }
 
@@ -50,15 +50,9 @@ background-color: #b32121;
     height: 60px;
     border-radius: 50%;
     border: 1 px solid black;
-}
-
-.checkerDepth{
-    border-radius: 50%;
-    width: 62px;
-    height: 62px;
-    box-shadow: 2px 4px 5px rgba(233, 185, 53, 0.5),
-                10px 10px 15px rgba(170, 158, 2, 0.322),
-                -1px -1px 30px rgba(123, 116, 164, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .checker.black{
@@ -70,5 +64,13 @@ background-color: #b32121;
 }
 
 .checker.active {
-    border: 4px solid rgb(18, 209, 8);
+    border: 4px solid cyan;
+}
+
+.king{
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border: 4px solid green;
+    border-radius: 50% ;
 }

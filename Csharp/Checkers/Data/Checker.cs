@@ -3,8 +3,9 @@ namespace Checkers.Pages;
     {
         public int Row { get; set; }
         public int Column { get; set; }
-        public CheckerDirection Direction { get; set; }
         public string Color { get; set; }
+        public bool ActiveChecker {get; set;} = false;
+        public CheckerDirection Direction { get; set; }
     
     }
         public enum CheckerDirection
