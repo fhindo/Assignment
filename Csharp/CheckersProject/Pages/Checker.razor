@@ -46,8 +46,7 @@
             {
                 rowsPossible.Add(activeChecker.Row - 1);
             }
-            @* add only the possable cells that the checker can move using the function below to the cellsPossible list (row,
-                column) *@
+            @* add only the possable cells that the checker can move using the function below to the cellsPossible list row,column *@
             foreach (int row in rowsPossible)
             {
                 EvaluateSpot(row, activeChecker.Column - 1);
@@ -64,7 +63,7 @@
     {
         @* if there is black checler at that column the blackckecer will have value else it will be null *@
         var blackChecker = blackCheckers.FirstOrDefault(n => n.Column == column && n.Row == row);
-
+        
         var whiteChecker = whiteCheckers.FirstOrDefault(n => n.Column == column && n.Row == row);
 
         if (blackChecker == null && whiteChecker == null)
@@ -75,29 +74,19 @@
 
         else if (firstTimeJump)
         {
-        
             {
                 if ((whiteTurn && blackChecker != null) || (!whiteTurn && whiteChecker != null))
                 {
                     int coulmnDiff = column - activeChecker.Column;
-                    @* if (coulmnDiff < 0)
-                    {
-                        coulmnDiff--;
-                    }
-                    else
-                    {
-                        coulmnDiff++;
-                    } *@
+                    Console.WriteLine(column);
+                    Console.WriteLine(activeChecker.Column);
+                    Console.WriteLine(coulmnDiff);
 
                     int rowDiff = row - activeChecker.Row;
-                    @* if (rowDiff < 0)
-                    {
-                        rowDiff--;
-                    }
-                    else
-                    {
-                        rowDiff++;
-                    } *@
+                    Console.WriteLine(row);
+                    Console.WriteLine(activeChecker.Row);
+                    Console.WriteLine(rowDiff);
+
                     EvaluateSpot(row + rowDiff, column + coulmnDiff);
                 }
             }
@@ -123,7 +112,7 @@
         }
         if (activeChecker != null)
         {
-            
+
 
             @* remove cheker after jump *@
 
@@ -208,11 +197,9 @@
                 });
             }
         }
-
     }
 
     @* the turn for checkers *@
-
     bool whiteTurn = true;
 
 
@@ -254,7 +241,7 @@
 
                     {
                         <div @onclick="() => checkerClick(checker)"
-                class="checker @checker.Color @(checker == activeChecker ? "active" : "" )">
+                            class="checker @checker.Color @(checker == activeChecker ? "active" : "" )">
                             @if (checker.Direction == CheckerDirection.Both)
                             {
                                 <div class="king"></div>
